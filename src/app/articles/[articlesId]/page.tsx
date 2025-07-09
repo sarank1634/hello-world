@@ -6,12 +6,14 @@ interface ArticlePageProps {
   searchParams?: { [key: string]: string | string[] | undefined };
 }
 
-export default function ArticlePage({ params, searchParams }: ArticlePageProps) {
-  const { articlesId } = params;
-  const lang = typeof searchParams?.lang === "string" ? searchParams!.lang : "en";
+export default async function ArticlePage({ params, searchParams }: ArticlePageProps) {
+  // Await dynamic parameters as recommended by Next.js 15
+  const { articlesId } = await params;
 
-  // If language param missing, redirect to english
-  if (!searchParams?.lang) redirect(`/articles/${articlesId}?lang=en`);
+  const resolvedSearchParams = await searchParams ? await searchParams : {};
+  const lang = typeof resolvedSearchParams?.lang === "string" ? resolvedSearchParams.lang : "en";
+
+  if (!resolvedSearchParams?.lang) redirect(`/articles/${articlesId}?lang=en`);
 
   return (
     <div className="p-6">
