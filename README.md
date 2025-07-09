@@ -111,3 +111,7 @@ auth route
 chapter 14 
 layout components :-
 productId> reivews> layout style
+
+chapter 16 
+multiple layout rootlayout
+create two route groups in the app
