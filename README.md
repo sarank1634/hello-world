@@ -110,3 +110,4 @@ auth route
 
 chapter 14 
 layout components :-
+productId> reivews> layout style
