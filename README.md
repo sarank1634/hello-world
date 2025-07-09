@@ -34,3 +34,79 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+routing conventions
+all routes must live inside the app folder
+route files must be named either page.js or page.tsx
+each folder represents a segments of the url path
+
+next js server components 
+client and server components
+
+client components 
+- 
+
+you need to add the use client directive to the top of the file to make it a client component
+while client components can't perform server side tasksslike reading files they can use hoks and handle user interactions
+
+react server components and routingand routing 
+work with server. you'll see practial  
+
+routing conventions 
+all routes must live inside the app folder
+route files must be named either page.js or page.tsx
+each folder represents a segments of the url path
+
+dynamic rounting folder struct like:
+
+app/products/[productid]/page.tsx
+you can use [productid] to create and also access dynamic routes
+
+chapter 7
+you can use the params object to access the dynamic routes in the server component 
+eg: {params}at the top of the function argurment 
+    after initialising promise 
+    the finaly step :
+    const productid = (await params).productid;
+  
+  the final url like at these "localhost:3000/products/1"
+
+chapter 8 nested dynamic routing
+localhost:3000/products/1/reviews/1
+
+create a page.tsx file in the reviews folder 
+review the couple of reviews
+
+chapter 9 catch all the segments 
+docs> [slug] run after enter url  path global or docs/any thing etc.
+ eg: localhost:3000/global/routing/catch-all-segments
+
+chapter 10 
+not found page
+create a not-found.tsx file in the app folder
+ 
+chapter 11 
+file colocation
+create app> Dashboard >line-chart.tsx 
+app> Dashboard >page.tsx
+
+chapter 12 
+private folder 
+this folder for internal stuff in the routing- don't includeing inside the routing system.
+ the folder and all subfolders are excluded from the routing system.  
+ add an underscore at the start of the folder name
+
+ app > _lib> format-date.js
+
+ private folders your ul 
+ logic separate from routing logic 
+ having a consistent way to organise your code
+ if you want - inyourcode  5f instead thaturl encode 
+
+ chapter 13 
+ rouye groups : 
+ logicaly organize our route and project files without the url struct
+auth route 
+
+chapter 14 
+layout components :-
