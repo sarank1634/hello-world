@@ -138,3 +138,14 @@ staic route :-
 
  dynamic route with query params
  <Link href={`/products/${productid}?sort=asc`}>product {productid}</Link>
+
+ chapter 21
+ search params:- 
+ params:- promise that reslove to an object containing the dynamic params for the current page
+ eg: 
+ like id:100
+
+ searchParams:- 
+ promise that reslove to an object containing the query params for the current page
+eg: 
+like sort:asc
