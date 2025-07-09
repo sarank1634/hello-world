@@ -115,3 +115,26 @@ productId> reivews> layout style
 chapter 16 
 multiple layout rootlayout
 create two route groups in the app
+
+chapter 17 
+meta seo :-
+static and dynamic
+
+
+chapter 19 
+defining routes for our app root, nested routes, dynamic routes, catch all routes, private routes
+
+staic route :-
+ <Link href="/">Home</Link>
+
+ dynamic route :-
+ const product id = 100;
+ <link href={`/products/${productid}`}>product {productid}</Link>
+
+ use replace to prevent the history from being updated  
+ eg: 
+ if you stay on the product list page select product 3 after direct to go home page
+ <link href={`/products/${productid}`} replace>product {productid}</Link>
+
+ dynamic route with query params
+ <Link href={`/products/${productid}?sort=asc`}>product {productid}</Link>
