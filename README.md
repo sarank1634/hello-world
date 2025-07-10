@@ -149,3 +149,17 @@ staic route :-
  promise that reslove to an object containing the query params for the current page
 eg: 
 like sort:asc
+
+ const resolvedSearchParams = await searchParams ? await searchParams : {};
+  const lang = typeof resolvedSearchParams?.lang === "string" ? resolvedSearchParams.lang : "en";
+
+chapter 22
+navigate programmatically:- 
+ write function after -> 
+ addd btn > write event > call function > navigate  >
+  next add push > import { useRouter } from "next/navigation"; 
+  you csn use push or back or replace with dynamic redirect routing
+
+
+chapter 23
+template files

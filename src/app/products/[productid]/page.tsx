@@ -5,19 +5,19 @@ type Props = {
     params : Promise<{productid: string}>;
 }
 
-export const genaratedata = async ({ 
+export const genarateMetadata = async ({ 
     params,
 }: Props): Promise<Metadata> => {
- const id = (await params).productid; 
+ const {productid} = await params; 
  return {
-    title: `product ${id}`,
-    description: `product ${id}`,
+    title: `product ${productid}`,
+    description: `product ${productid}`,
  }
 }
 
 export default async function ProductDetails({
     params
 }: Props) {
-    const productid = (await params).productid;
+    const {productid} = await params;
     return <h1>Details about Product {productid}</h1>;
 }
