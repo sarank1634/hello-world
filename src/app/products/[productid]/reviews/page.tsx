@@ -25,16 +25,16 @@ function getRandomInt(count: number) {
 
 
 type ReviewsListProps = {
-  params: Promise<{ productid: string }>;
+  params: { productid: string };
 };
 
-export default async function ReviewsList({ params }: ReviewsListProps) {
+export default function ReviewsList({ params }: ReviewsListProps) {
   const random = getRandomInt(2);
   if (random === 1) {
     throw new Error('Error loading reviews');
   }
 
-  const { productid } = await params;
+  const { productid } = params;
 
   return <h1>Reviews list for product {productid}</h1>;
 }

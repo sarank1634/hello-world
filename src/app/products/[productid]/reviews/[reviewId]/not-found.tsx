@@ -18,7 +18,7 @@ import { usePathname } from "next/navigation";
 
 export default function NotFound() {
   const pathname = usePathname();
-  const segments = pathname.split("/");
+  const segments = (pathname ?? '').split('/');
   const productId = segments[2] || "?";
   const reviewId = segments[4] || "?";
 

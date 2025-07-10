@@ -16,7 +16,7 @@ export default function AuthLayout({ children, }: {
   children: React.ReactNode
 }) {
   const [input, setInput] = useState("");
-  const pathname = usePathname();
+  const pathname = usePathname() ?? "";
   return (
     <div>
       <div>

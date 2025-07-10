@@ -1,0 +1,38 @@
+"use client";
+
+import { useEffect } from "react";
+import { usePathname } from "next/navigation";
+
+// Error boundary for `/products/[productid]/reviews`
+// Displays a helpful message, logs the error, and lets the user retry.
+
+type ErrorBoundaryProps = {
+  error: Error & { digest?: string };
+  reset: () => void;
+};
+
+export default function ReviewsError({ error, reset }: ErrorBoundaryProps) {
+  // Log error for observability
+  useEffect(() => {
+    console.error(error);
+  }, [error]);
+
+  const pathname = usePathname();
+  const segments = (pathname ?? "").split("/");
+  const productId = segments[2] || "?";
+
+  return (
+    <main className="p-8 text-center">
+      <h1 className="text-2xl font-semibold mb-4">
+        Something went wrong while loading reviews for product {productId}
+      </h1>
+      <p className="mb-4 text-red-600">{error.message}</p>
+      <button
+        onClick={() => reset()}
+        className="rounded bg-blue-600 px-4 py-2 text-white hover:bg-blue-700"
+      >
+        Try again
+      </button>
+    </main>
+  );
+}
