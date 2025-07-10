@@ -162,4 +162,23 @@ navigate programmatically:-
 
 
 chapter 23
-template files
+template files are simlilar to layout in that they are shared across multiple pages onyour app
+
+whenever a user between routes shaing a tempate you get a complet freshm start 
+a new template component is mounted
+a new dom element is recreated 
+state is cleared 
+
+collect data from user after include write state import { useState } from "react";
+after jsx render element 
+write eg:-
+input element value={input} onChange={(e) => setInput(e.target.value)};
+
+chapter 24
+loading ui
+  loading.tsx
+   createnloading states that users see while for content load in a specific route segemnt.
+
+   add asyn new promise and setTimeout to simulate a delay  
+   after reload blog for 2 seconds you can see loading ui
+   then next blog page . add your customise loading ui
