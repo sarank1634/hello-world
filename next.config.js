@@ -1,5 +1,13 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // Enable ESLint during builds to surface errors
+  eslint: {
+    ignoreDuringBuilds: false,
+  },
+  // Enable TypeScript type-checking during builds
+  typescript: {
+    ignoreBuildErrors: false,
+  },
   // In dev we disable Webpack's persistent filesystem cache because it
   // occasionally becomes corrupted (e.g. missing pack files) and causes
   // ENOENT errors like:

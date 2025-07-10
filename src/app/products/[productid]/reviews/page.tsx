@@ -17,20 +17,24 @@
 // }
 
 
-import { redirect } from 'next/navigation';
 
-export default async function ReviewDetails({
-  params,
-}: {
-  params: Promise<{ productid: string; reviewID: string }>;
-}) {
-  // Await the params to resolve the Promise
-  const { productid, reviewID } = await params;
+function getRandomInt(count: number) {
+  return Math.floor(Math.random() * count);
+}
 
-  // Check if reviewID exceeds 1000 and redirect if necessary
-  if (parseInt(reviewID) > 1000) {
-    redirect('/products');
+
+
+type ReviewsListProps = {
+  params: Promise<{ productid: string }>;
+};
+
+export default async function ReviewsList({ params }: ReviewsListProps) {
+  const random = getRandomInt(2);
+  if (random === 1) {
+    throw new Error('Error loading reviews');
   }
 
-  return <h1>Review {reviewID} for product {productid}</h1>;
+  const { productid } = await params;
+
+  return <h1>Reviews list for product {productid}</h1>;
 }

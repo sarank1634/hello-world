@@ -182,3 +182,6 @@ loading ui
    add asyn new promise and setTimeout to simulate a delay  
    after reload blog for 2 seconds you can see loading ui
    then next blog page . add your customise loading ui
+
+chapter 25
+error handling

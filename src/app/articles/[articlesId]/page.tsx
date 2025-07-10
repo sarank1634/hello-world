@@ -1,17 +1,15 @@
-"use client"
-import { redirect } from "next/navigation";
+import { redirect } from 'next/navigation';
 import Link from "next/link";
 
-interface ArticlePageProps {
-  params: { articlesId: string };
-  searchParams?: { [key: string]: string | string[] | undefined };
-}
+type ArticlePageProps = {
+  params: Promise<{ articlesId: string }>;
+  searchParams?: Promise<{ lang?: string }>;
+};
 
 export default async function ArticlePage({ params, searchParams }: ArticlePageProps) {
-  // Await dynamic parameters as recommended by Next.js 15
   const { articlesId } = await params;
 
-  const resolvedSearchParams = await searchParams ? await searchParams : {};
+  const resolvedSearchParams = (searchParams ? await searchParams : {}) as { lang?: string };
   const lang = typeof resolvedSearchParams?.lang === "string" ? resolvedSearchParams.lang : "en";
 
   if (!resolvedSearchParams?.lang) redirect(`/articles/${articlesId}?lang=en`);
