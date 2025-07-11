@@ -192,3 +192,26 @@ chapter 33
 intercepting routes
 create f1> pgae^ f2> page 
 contain soruce and target folder
+(..)
+(..)(..)
+(...)
+
+
+chapter 34 
+intercepter rotuting expamle with real world use case 
+
+photo feed 
+component
+
+add photos photos
+create a type script file (.)
+wonder -contain id,name,src photograph,location
+
+setup page.tsx file
+
+add [id] -> page-> modal-> page.tsx
+
+intercepter navigation 
+modal-. layout
+
+chapter 35 route handelers
