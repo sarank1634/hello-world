@@ -185,3 +185,10 @@ loading ui
 
 chapter 25
 error handling
+
+
+
+chapter 33 
+intercepting routes
+create f1> pgae^ f2> page 
+contain soruce and target folder
